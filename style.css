@@ -1,0 +1,89 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* تغيير الخط إلى خطوط عربية أكثر وضوحًا */
+  background-color: #f0f0f0;
+  direction: rtl;
+  text-align: right;
+  padding: 20px;
+  margin: 0;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.form-group.col-6 {
+  flex-basis: 50%;
+}
+
+.form-group.col-4 {
+  flex-basis: 33.33%;
+}
+
+.form-group.col-12 {
+  flex-basis: 100%;
+  margin: 1px;
+}
+
+label {
+  flex: 1;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"] {
+  flex: 2;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  outline: none;
+  border-color: #289cfb;
+}
+
+button {
+  padding: 15px 50px;
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+
+  width: max-width/8;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  font-size: xxx-large;
+}

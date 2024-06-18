@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <title>نموذج بيانات العميل</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1>بـيـانـات الـعمــلاء</h1>
+    <div class="form-container">
+      <form id="dataForm">
+        <div class="form-row">
+          <div class="form-group col-6">
+            <label for="clientCode">كود العميل</label>
+            <input
+              type="number"
+              id="clientCode"
+              name="clientCode"
+              placeholder="أدخل كود العميل..."
+            />
+          </div>
+
+          <div class="form-group col-6">
+            <label for="clientNameAr">اسم العميل Ar</label>
+            <input
+              type="text"
+              id="clientNameAr"
+              name="clientNameAr"
+              placeholder="أدخل اسم العميل بالعربي..."
+            />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-12">
+            <label for="clientNameEn">اسم العميل En</label>
+            <input
+              type="text"
+              id="clientNameEn"
+              name="clientNameEn"
+              placeholder="Enter client name in English..."
+            />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-4">
+            <label for="taxNumber">الرقم الضريبي</label>
+            <input
+              type="number"
+              id="taxNumber"
+              name="taxNumber"
+              placeholder="أدخل الرقم الضريبي..."
+            />
+          </div>
+
+          <div class="form-group col-4">
+            <label for="commercialRegister">رقم السجل التجاري</label>
+            <input
+              type="number"
+              id="commercialRegister"
+              name="commercialRegister"
+              placeholder="أدخل رقم السجل التجاري..."
+            />
+          </div>
+
+          <div class="form-group col-4">
+            <label for="governorateName">اسم المحافظة</label>
+            <input
+              type="text"
+              id="governorateName"
+              name="governorateName"
+              placeholder="أدخل اسم المحافظة..."
+            />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-4">
+            <label for="cityName">اسم المدينة</label>
+            <input
+              type="text"
+              id="cityName"
+              name="cityName"
+              placeholder="أدخل اسم المدينة..."
+            />
+          </div>
+
+          <div class="form-group col-4">
+            <label for="postalCode">الرمز البريدي</label>
+            <input
+              type="number"
+              id="postalCode"
+              name="postalCode"
+              placeholder="أدخل الرمز البريدي..."
+            />
+          </div>
+
+          <div class="form-group col-4">
+            <label for="districtName">اسم الحي</label>
+            <input
+              type="text"
+              id="districtName"
+              name="districtName"
+              placeholder="أدخل اسم الحي..."
+            />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-4">
+            <label for="street1">اسم الشارع 1</label>
+            <input
+              type="text"
+              id="street1"
+              name="street1"
+              placeholder="أدخل اسم الشارع 1..."
+            />
+          </div>
+
+          <div class="form-group col-4">
+            <label for="street2">اسم الشارع 2</label>
+            <input
+              type="text"
+              id="street2"
+              name="street2"
+              placeholder="أدخل اسم الشارع 2..."
+            />
+          </div>
+
+          <div class="form-group col-4">
+            <label for="buildingNumber">رقم المبنى</label>
+            <input
+              type="number"
+              id="buildingNumber"
+              name="buildingNumber"
+              placeholder="أدخل رقم المبنى..."
+            />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-4">
+            <label for="additionalNumber">الرقم الإضافي</label>
+            <input
+              type="number"
+              id="additionalNumber"
+              name="additionalNumber"
+              placeholder="أدخل الرقم الإضافي..."
+            />
+          </div>
+
+          <div class="form-group col-4">
+            <label for="mobileNumber">رقم الجوال</label>
+            <input
+              type="number"
+              id="mobileNumber"
+              name="mobileNumber"
+              placeholder="أدخل رقم الجوال..."
+            />
+          </div>
+
+          <div class="form-group col-4">
+            <label for="phoneNumber">رقم الهاتف</label>
+            <input
+              type="number"
+              id="phoneNumber"
+              name="phoneNumber"
+              placeholder="أدخل رقم الهاتف..."
+            />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-4">
+            <label for="creditLimit">الحد الائتماني</label>
+            <input
+              type="number"
+              id="creditLimit"
+              name="creditLimit"
+              placeholder="أدخل الحد الائتماني..."
+            />
+          </div>
+
+          <div class="form-group col-4">
+            <label for="responsiblePersonName">اسم المسؤول</label>
+            <input
+              type="text"
+              id="responsiblePersonName"
+              name="responsiblePersonName"
+              placeholder="أدخل اسم المسؤول..."
+            />
+          </div>
+
+          <div class="form-group col-4">
+            <label for="responsiblePersonMobile">جوال المسؤول</label>
+            <input
+              type="number"
+              id="responsiblePersonMobile"
+              name="responsiblePersonMobile"
+              placeholder="أدخل جوال المسؤول..."
+            />
+          </div>
+        </div>
+
+        <!-- صف للأزرار -->
+        <div class="form-row">
+          <div class="form-group col-12">
+            <button type="button">اضافة</button>
+            <button type="button">بحث</button>
+            <button type="button">حذف</button>
+            <button type="button">تعديل</button>
+            <button type="button">طباعة</button>
+            <button type="submit">موافق</button>
+            <button type="button">الغاء</button>
+            <button type="button">خروج</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
