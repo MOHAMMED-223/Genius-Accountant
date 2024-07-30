@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <title>نموذج بيانات العميل</title>
+    <link rel="stylesheet" href="./style3.css" />
+  </head>
+  <style>
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #0056b3;
+      color: #fff;
+      overflow-y: auto;
+      position: sticky;
+      top: 0;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .panel-menu ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .panel-menu li {
+      width: 100%;
+    }
+
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      cursor: pointer;
+      border-bottom: 1px solid #004494;
+      transition: background-color 0.3s ease;
+    }
+
+    .menu-item:hover {
+      background-color: #004494;
+    }
+
+    .submenu {
+      display: none;
+      background-color: #e9ecef;
+      padding: 0;
+      margin: 0;
+    }
+
+    .submenu-open {
+      display: block;
+    }
+
+    .submenu li {
+      border-bottom: 1px solid #ddd;
+    }
+
+    .submenu li a {
+      display: block;
+      padding: 20px;
+      text-decoration: none;
+      color: #000;
+      background-color: #fff;
+      transition: background-color 0.3s ease, color 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .submenu li a:hover {
+      background-color: #f8f9fa;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .submenu li a:focus,
+    .submenu li a:active {
+      background-color: #fd7e14;
+      color: #fff;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 0;
+      background-color: #f1f1f1;
+    }
+
+    .large-image {
+      width: 100%;
+      height: 100vh;
+    }
+
+    svg {
+      fill: currentColor;
+      width: 1em;
+      height: 1em;
+      vertical-align: middle;
+      transition: transform 0.3s ease;
+    }
+
+    .svg-rotate {
+      transform: rotate(180deg);
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <nav class="panel-menu">
+          <ul>
+            <li>
+              <div class="menu-item" data-target="#fileSubmenu">
+                <span>الملف</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-chevron-down"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M1.5 4.5a.5.5 0 0 1 .854-.354L8 10.793l5.646-6.647a.5.5 0 1 1 .708.708l-6 7a.5.5 0 0 1-.708 0l-6-7A.5.5 0 0 1 1.5 4.5z"
+                  />
+                </svg>
+              </div>
+              <ul id="fileSubmenu" class="submenu">
+                <li><a href="#">بيانات الأصناف</a></li>
+                <li><a href="./Customer-Data.html">بيانات العملاء</a></li>
+                <li><a href="#">فاتورة المبيعات</a></li>
+              </ul>
+            </li>
+            <li>
+              <div class="menu-item" data-target="#reportsSubmenu">
+                <span>التقارير</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-chevron-down"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M1.5 4.5a.5.5 0 0 1 .854-.354L8 10.793l5.646-6.647a.5.5 0 1 1 .708.708l-6 7a.5.5 0 0 1-.708 0l-6-7A.5.5 0 0 1 1.5 4.5z"
+                  />
+                </svg>
+              </div>
+              <ul id="reportsSubmenu" class="submenu">
+                <li><a href="#">تقرير بيانات العملاء</a></li>
+                <li><a href="#">تقرير بيانات الأصناف</a></li>
+                <li><a href="#">تقرير فواتير المبيعات</a></li>
+                <li><a href="#">تقرير فواتير المبيعات نقدية</a></li>
+                <li><a href="#">تقرير فواتير المبيعات الآجلة</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="main-content">
+        <form id="clientForm">
+          <header class="h1">بيانات الأصناف</header>
+          <div class="form-row">
+            <div class="form-group col-4">
+              <label for="clientCode">كود الصنف</label>
+              <input
+                type="number"
+                id="clientCode"
+                name="clientCode"
+                placeholder="أدخل كود الصنف..."
+                class="client-code"
+              />
+              <span id="clientCode-error" class="error-message"></span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-6">
+              <label for="clientNameAr">اسم العميل ع</label>
+              <input
+                type="text"
+                id="clientNameAr"
+                name="clientNameAr"
+                placeholder="ادخل اسم العميل بالعربي..."
+                class="client-name-ar"
+              />
+              <span id="clientNameAr-error" class="error-message"></span>
+            </div>
+            <div class="form-group col-6">
+              <label for="clientNameEn">اسم العميل EN</label>
+              <input
+                type="text"
+                id="clientNameEn"
+                name="clientNameEn"
+                placeholder="Enter client name in English..."
+                class="client-name-en"
+              />
+              <span id="clientNameEn-error" class="error-message"></span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-4">
+              <label for="defaultPrice">السعر الافتراضي</label>
+              <input
+                type="number"
+                id="defaultPrice"
+                name="defaultPrice"
+                placeholder="أدخل السعر الافتراضي..."
+              />
+              <span id="defaultPrice-error" class="error-message"></span>
+            </div>
+          </div>
+          <div class="form-row buttons">
+            <button type="button" id="addBtn">اضافة</button>
+            <button type="button" id="searchBtn">بحث</button>
+            <button type="button" id="editBtn" class="disabled" disabled>
+              حفظ التعديل
+            </button>
+            <button id="printBtn" disabled>طباعة</button>
+            <button type="submit" id="submitBtn">موافق</button>
+            <button type="button" id="cancelBtn">الغاء</button>
+            <a href="./home.html"
+              ><button type="button" id="exitBtn">خروج</button></a
+            >
+          </div>
+          <div id="resultContainer"></div>
+          <div id="searchResult" class="hidden"></div>
+        </form>
+      </div>
+    </div>
+    <script src="./main4.js"></script>
+    <script>
+      // Code for the dropdown menu
+      document.addEventListener("DOMContentLoaded", function () {
+        var menuItems = document.querySelectorAll(".menu-item");
+        menuItems.forEach(function (menuItem) {
+          menuItem.addEventListener("click", function () {
+            var target = document.querySelector(menuItem.dataset.target);
+            if (target) {
+              target.classList.toggle("submenu-open");
+            }
+          });
+        });
+      });
+
+      function toggleMenu(menuId) {
+        var menu = document.getElementById(menuId);
+        if (menu.style.display === "block") {
+          menu.style.display = "none";
+        } else {
+          menu.style.display = "block";
+        }
+      }
+      $(document).ready(function () {
+        $('.list-group-item[data-toggle="collapse"]').on("click", function () {
+          var $icon = $(this).find(".fas");
+          var isOpen = $icon.hasClass("fa-chevron-up");
+          $(".fas").removeClass("fa-chevron-up").addClass("fa-chevron-down");
+          if (!isOpen) {
+            $icon.removeClass("fa-chevron-down").addClass("fa-chevron-up");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

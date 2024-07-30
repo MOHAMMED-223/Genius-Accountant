@@ -1,0 +1,296 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f2f2f2;
+  direction: rtl;
+  text-align: right;
+  line-height: 1.6; /* تحسين تباين النصوص */
+}
+
+.container {
+  width: 100%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  position: relative;
+  margin: auto;
+  padding: 20px;
+}
+.h1 {
+  font-size: xxx-large;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center; /* Center align the heading */
+}
+
+.form-group label {
+  display: block;
+  text-align: right; /* Align labels to the right */
+}
+
+.form {
+  width: 100%;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px; /* زيادة المسافة بين الصفوف */
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  width: 100%; /* تأكد من أن العرض هو 100% */
+}
+
+label {
+  flex: 1;
+  margin-right: 10px;
+  font-weight: bold;
+  min-width: 150px; /* إضافة مسافة بين الاسم والخانة */
+}
+
+input[type="text"],
+input[type="number"] {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  background-color: #e9ecef; /* اللون الباهت */
+  color: #000000; /* اللون الباهت */
+  pointer-events: none; /* منع التفاعل */
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* مسافة بين الأزرار */
+  margin-top: 20px; /* تحسين المسافة بين الأزرار والصفوف */
+}
+
+button {
+  padding: 15px 30px; /* تصحيح حجم الأزرار للهواتف */
+  background-color: #00aaff;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 140px;
+}
+button.disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.buttons button:hover:not(.disabled) {
+  background-color: #0056b3;
+}
+
+.buttons button:hover {
+  background-color: #0056b3;
+}
+@media screen and (max-width: 600px) {
+  .form-group {
+    flex: 100%;
+  }
+
+  .buttons {
+    gap: 10px; /* مسافة بين الأزرار */
+  }
+
+  .buttons button {
+    flex: 1 1 calc(50% - 10px); /* تأخذ الأزرار نصف العرض في الشاشات الصغيرة */
+    margin: 5px 0;
+    padding: 15px 50px; /* حجم الأزرار في الشاشات الصغيرة */
+  }
+
+  .form-group label {
+    min-width: unset; /* إلغاء الحد الأدنى لعرض العناصر */
+
+    font-size: 14px; /* حجم النص في الشاشات الصغيرة */
+    margin-bottom: 5px; /* مسافة بين النصوص في الشاشات الصغيرة */
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="number"] {
+    margin-top: 1px; /* مسافة بين النص والحقل في الشاشات الصغيرة */
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .form-group {
+    flex: 0 0 33.33%; /* تقسيم الخانات بنسبة مئوية عندما يكون عرض الشاشة أكبر من 600 بكسل */
+    max-width: 33.33%;
+  }
+
+  .form-group.col-6 {
+    flex: 0 0 100%; /* تكبير الخانة في الصف الثاني لتأخذ الصف بالكامل */
+    max-width: 100%;
+  }
+  .form-group.col-8 {
+    flex: 0 0 66.6%; /* تكبير الخانة في الصف الثاني لتأخذ الصف بالكامل */
+    max-width: 66.6%;
+  }
+}
+button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* General styles for buttons */
+button.disabled {
+  background-color: lightgrey;
+  color: darkgrey;
+  pointer-events: none;
+}
+
+/* Rotating border for the add button */
+#addBtn {
+  position: relative;
+  overflow: hidden;
+}
+
+#addBtn::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 2px solid transparent;
+  border-top-color: #00aaff;
+  border-right-color: #00aaff;
+  border-radius: 4px;
+  animation: rotate 1s linear infinite;
+}
+
+/* Styling the search result table */
+#searchResult {
+  display: none; /* Hidden initially */
+  margin-top: 20px;
+}
+
+#searchResult table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#searchResult th,
+#searchResult td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+#searchResult th {
+  background-color: #f2f2f2;
+}
+
+#resultContainer {
+  position: absolute;
+  top: 100%; /* Display just below the form */
+  left: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 10;
+  display: none;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+#searchResult {
+  position: absolute;
+  top: 100%; /* Display just below the form */
+  left: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 10;
+  display: none;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+#resultContainer table,
+#searchResult table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px; /* Adjust as needed */
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+  table-layout: fixed;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.bi-trash-fill {
+  width: 25px;
+  height: 25px;
+  color: red;
+  cursor: pointer;
+}
+
+.bi-pencil-fill {
+  width: 25px;
+  height: 25px;
+  margin-left: 10px; /* Add space between icons */
+  cursor: pointer;
+  color: blue;
+}
+
+td svg {
+  cursor: pointer;
+}
+
+.delete-btn,
+.edit-btn {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.delete-btn:hover .bi-trash-fill {
+  color: darkred; /* Darker red on hover */
+}
+
+.edit-btn:hover .bi-pencil-fill {
+  color: #0802a3; /* Add a color change on hover for edit button */
+}
+
+.action-buttons {
+  display: flex;
+  gap: 5px; /* تقليل المسافة بين الأزرار */
+}
+.action-buttons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.error-message {
+  color: red;
+  font-size: 0.875em; /* يمكن تعديل الحجم حسب الحاجة */
+}

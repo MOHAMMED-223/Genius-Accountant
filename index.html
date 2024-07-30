@@ -2,238 +2,81 @@
 <html lang="ar">
   <head>
     <meta charset="UTF-8" />
-    <title>نموذج بيانات العميل</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>صفحة تسجيل الدخول</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      <a id="customerServiceLink" href="index.html" style="display: none;"></a>
+
+  
     <link rel="stylesheet" href="./style.css" />
-    <style>
-      .error-message {
-        color: red;
-        font-size: 0.875em;
-      }
-    </style>
   </head>
   <body>
+    <div class="background"></div>
     <div class="container">
-      <h1>بـيـانـات الـعمــلاء</h1>
-      <form id="clientForm">
-        <div class="form-row">
-          <div class="form-group col-4">
-            <label for="clientCode">كود العميل</label>
-            <input
-              type="number"
-              id="clientCode"
-              name="clientCode"
-              placeholder="أدخل كود العميل..."
-              class="client-code"
-            />
-            <span id="clientCode-error" class="error-message"></span>
-          </div>
-          <div class="form-group col-8">
-            <label for="clientNameAr">اسم العميل Ar</label>
-            <input
-              type="text"
-              id="clientNameAr"
-              name="clientNameAr"
-              placeholder="أدخل اسم العميل بالعربي..."
-              class="client-name-ar"
-              style="width: 100%"
-            />
-            <span id="clientNameAr-error" class="error-message"></span>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group col-6">
-            <label for="clientNameEn">اسم العميل En</label>
-            <input
-              type="text"
-              id="clientNameEn"
-              name="clientNameEn"
-              placeholder="Enter client name in English..."
-              class="client-name-en"
-              style="width: 100%"
-            />
-            <span id="clientNameEn-error" class="error-message"></span>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group col-4">
-            <label for="taxNumber">الرقم الضريبي</label>
-            <input
-              type="number"
-              id="taxNumber"
-              name="taxNumber"
-              placeholder="أدخل الرقم الضريبي..."
-            />
-            <span id="taxNumber-error" class="error-message"></span>
-          </div>
-          <div class="form-group col-4">
-            <label for="commercialRegister">رقم السجل التجاري</label>
-            <input
-              type="number"
-              id="commercialRegister"
-              name="commercialRegister"
-              placeholder="أدخل رقم السجل التجاري..."
-            />
-            <span id="commercialRegister-error" class="error-message"></span>
-          </div>
-          <div class="form-group col-4">
-            <label for="governorateName">اسم المحافظة</label>
-            <input
-              type="text"
-              id="governorateName"
-              name="governorateName"
-              placeholder="أدخل اسم المحافظة..."
-            />
-            <span id="governorateName-error" class="error-message"></span>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group col-4">
-            <label for="cityName">اسم المدينة</label>
-            <input
-              type="text"
-              id="cityName"
-              name="cityName"
-              placeholder="أدخل اسم المدينة..."
-            />
-            <span id="cityName-error" class="error-message"></span>
-          </div>
-          <div class="form-group col-4">
-            <label for="postalCode">الرمز البريدي</label>
-            <input
-              type="number"
-              id="postalCode"
-              name="postalCode"
-              placeholder="أدخل الرمز البريدي..."
-            />
-            <span id="postalCode-error" class="error-message"></span>
-          </div>
-          <div class="form-group col-4">
-            <label for="districtName">اسم الحي</label>
-            <input
-              type="text"
-              id="districtName"
-              name="districtName"
-              placeholder="أدخل اسم الحي..."
-            />
-            <span id="districtName-error" class="error-message"></span>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group col-4">
-            <label for="street1">اسم الشارع 1</label>
-            <input
-              type="text"
-              id="street1"
-              name="street1"
-              placeholder="أدخل اسم الشارع 1..."
-            />
-            <span id="street1-error" class="error-message"></span>
-          </div>
-          <div class="form-group col-4">
-            <label for="street2">اسم الشارع 2</label>
-            <input
-              type="text"
-              id="street2"
-              name="street2"
-              placeholder="أدخل اسم الشارع 2..."
-            />
-            <span id="street2-error" class="error-message"></span>
-          </div>
-          <div class="form-group col-4">
-            <label for="buildingNumber">رقم المبنى</label>
-            <input
-              type="number"
-              id="buildingNumber"
-              name="buildingNumber"
-              placeholder="أدخل رقم المبنى..."
-            />
-            <span id="buildingNumber-error" class="error-message"></span>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group col-4">
-            <label for="additionalNumber">الرقم الإضافي</label>
-            <input
-              type="number"
-              id="additionalNumber"
-              name="additionalNumber"
-              placeholder="أدخل الرقم الإضافي..."
-            />
-            <span id="additionalNumber-error" class="error-message"></span>
-          </div>
-          <div class="form-group col-4">
-            <label for="mobileNumber">رقم الجوال</label>
-            <input
-              type="number"
-              id="mobileNumber"
-              name="mobileNumber"
-              placeholder="أدخل رقم الجوال..."
-            />
-            <span id="mobileNumber-error" class="error-message"></span>
-          </div>
-          <div class="form-group col-4">
-            <label for="phoneNumber">رقم الهاتف</label>
-            <input
-              type="number"
-              id="phoneNumber"
-              name="phoneNumber"
-              placeholder="أدخل رقم الهاتف..."
-            />
-            <span id="phoneNumber-error" class="error-message"></span>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group col-4">
-            <label for="creditLimit">الحد الائتماني</label>
-            <input
-              type="number"
-              id="creditLimit"
-              name="creditLimit"
-              placeholder="أدخل الحد الائتماني..."
-            />
-            <span id="creditLimit-error" class="error-message"></span>
-          </div>
-          <div class="form-group col-4">
-            <label for="responsiblePersonName">اسم المسؤول</label>
-            <input
-              type="text"
-              id="responsiblePersonName"
-              name="responsiblePersonName"
-              placeholder="أدخل اسم المسؤول..."
-            />
-            <span id="responsiblePersonName-error" class="error-message"></span>
-          </div>
-          <div class="form-group col-4">
-            <label for="responsiblePersonMobile">جوال المسؤول</label>
-            <input
-              type="number"
-              id="responsiblePersonMobile"
-              name="responsiblePersonMobile"
-              placeholder="أدخل جوال المسؤول..."
-            />
-            <span
-              id="responsiblePersonMobile-error"
-              class="error-message"
-            ></span>
-          </div>
-        </div>
-        <div class="form-row buttons">
-          <button type="button" id="addBtn">اضافة</button>
-          <button type="button" id="searchBtn">بحث</button>
-          <button type="button" id="editBtn" class="disabled" disabled>
-            حفظ التعديل
-          </button>
-          <button id="printBtn" disabled>طباعة</button>
+      <div class="row justify-content-center">
+        <div class="col-md-10 col-lg-8">
+          <div class="card mt-5">
+            <div class="card-body">
+              <div class="text-center mb-4">
+                <img src="logo.png" alt="Logo" class="logo" />
+              </div>
+              <h3 class="card-title text-center">تسجيل الدخول</h3>
+              <form id="loginForm">
+                <div class="form-row">
+                  <div class="form-group col-md-9 text-right form-group-col-9">
+                    <label id="new" for="username" class="float-right"
+                      >اسم المستخدم</label
+                    >
+                    <select
+                      class="form-control large-input"
+                      id="clientCode"
+                      required
+                    >
+                      <option value="">....اختر اسم المستخدم</option>
+                      <option value="محمد">محمد</option>
+                      <option value="عماد">عماد</option>
+                      <option value="ادهم">ادهم</option>
+                      <!-- أضف المزيد من الخيارات حسب الحاجة -->
+                    </select>
+                  </div>
+                  <div class="form-group col-md-3 text-right form-group-col-3">
+                    <label for="newField" class="float-right">
+                      كود المستخدم
+                    </label>
+                    <input
+                      type="text"
+                      class="form-control small-input no-spinners"
+                      id="newField"
+                      placeholder=" ....ادخل الكود"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form-group text-right">
+                  <label for="password" class="float-right">كلمة المرور</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    placeholder="....ادخل كلمة المرور"
+                    required
+                  />
+                </div>
 
-          </button>
-          <button type="submit" id="submitBtn">موافق</button>
-          <button type="button" id="cancelBtn">الغاء</button>
-          <button type="button" id="exitBtn">خروج</button>
+                <a id="loginButton" href="#" class="btn btn-primary btn-block">تسجيل الدخول</a>
+
+                <div class="text-center mt-3">
+                  <a href="#" class="forgot-password">نسيت كلمة المرور؟</a>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-        <div id="resultContainer"></div>
-        <div id="searchResult" class="hidden"></div>
-      </form>
+      </div>
     </div>
+
     <script src="./main.js"></script>
   </body>
 </html>
